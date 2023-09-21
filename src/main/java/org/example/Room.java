@@ -10,4 +10,12 @@ public abstract class Room {
         this.capacity = capacity;
         this.guests = guests;
     }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public ArrayList<Guest> getGuests() {
+        return guests;
+    }
 }
