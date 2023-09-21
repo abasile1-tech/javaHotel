@@ -11,6 +11,14 @@ public class Hotel {
         this.conferenceRooms = conferenceRooms;
     }
 
+    public ArrayList<Bedroom> getBedrooms() {
+        return bedrooms;
+    }
+
+    public ArrayList<ConferenceRoom> getConferenceRooms() {
+        return conferenceRooms;
+    }
+
     public void checkGuestIn(Room room, Guest guest){
 
     }

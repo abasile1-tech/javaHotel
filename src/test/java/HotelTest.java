@@ -63,4 +63,23 @@ public class HotelTest {
         bedrooms.add(bedroom2);
         hotel = new Hotel(bedrooms, conferenceRooms);
     }
+
+    @Test
+    public void canCheckGuestIn() {
+        assertEquals(1, hotel.getBedrooms().get(0).getGuests().size());
+        hotel.checkGuestIn(bedroom1, guest3);
+        assertEquals(2, hotel.getBedrooms().get(0).getGuests().size());
+        assertEquals("Enrique", hotel.getBedrooms().get(0).getGuests().get(1).getName());
+    }
+
+    @Test
+    public void canCheckGuestOut() {
+        assertEquals(1, hotel.getBedrooms().get(0).getGuests().size());
+        hotel.checkGuestIn(bedroom1, guest3);
+        assertEquals(2, hotel.getBedrooms().get(0).getGuests().size());
+        assertEquals("Enrique", hotel.getBedrooms().get(0).getGuests().get(1).getName());
+        hotel.checkGuestOut(bedroom1, guest3);
+        assertEquals(1, hotel.getBedrooms().get(0).getGuests().size());
+        assertEquals("Helen", hotel.getBedrooms().get(0).getGuests().get(0).getName());
+    }
 }
